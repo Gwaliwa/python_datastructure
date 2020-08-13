@@ -1,0 +1,4 @@
+text = "X-DSPAM-Confidence:    0.8475";
+s=text.find(" ")
+y = text[s+1::]
+print(float(y))
