@@ -1,0 +1,26 @@
+name = input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+counter = dict()
+for line in handle:
+    if line.startswith('From:'):
+        words = line.split()
+        if words[1] in counter:
+            counter[words[1]] = counter[words[1]]+1
+        else:
+            counter[words[1]] = 1
+                
+
+#dictVal = max(zip(counter.values(), counter.keys()))
+
+v = list(counter.values()) 
+  
+# taking list of car keys in v 
+largest = -1
+wor=None
+for k, v in counter.items():
+    if v>largest:
+        largest=v
+        wor=k
+  
+print(wor, largest) 
